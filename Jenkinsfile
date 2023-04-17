@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment{
-        DOCKERHUB_CREDS = credentials('dockerhub')
+        DOCKERHUB_CREDS = credentials('Dockerhub')
     }
     stages {
         stage('Clone Repo') {
@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Build Image') {
             steps {
-		         sh 'docker build -t ubedev/jenkinstest:$BUILD_NUMBER ./jenkins-test/'
+		         sh 'docker build -t ubedev/jenkinstest:$BUILD_NUMBER .'
             }
         }
         stage('Docker Login') {
