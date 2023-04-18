@@ -27,7 +27,7 @@ pipeline {
          }
          stage('Triggering Step-Deployment') {
             steps {  
-                build quietPeriod: 5, job: 'Step-Deployment'
+                build job: 'Step-Deployment', parameters: [string(name: 'BUILDNUMBER', value: 'env.BUILD_NUMBER')]
             }
          }
    }
