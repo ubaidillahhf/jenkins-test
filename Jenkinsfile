@@ -27,7 +27,7 @@ pipeline {
          }
          stage('Triggering Step-Deployment') {
             steps {  
-                build job: 'Step-Deployment', parameters: [string(name: 'BUILDNUMBER', value: '$BUILD_NUMBER')]
+                build job: 'Step-Deployment', parameters: [string(name: 'BUILDNUMBER', value: env.BUILD_NUMBER)]
             }
          }
    }
