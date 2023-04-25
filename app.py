@@ -3,4 +3,4 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'Check triggering webhook lagi v10!!!!'
+    return 'Check triggering webhook lagi v12!!!!'
